@@ -1,0 +1,17 @@
+version="0.3.2"
+
+[scripts]
+debug = [
+	"bonnie build",
+	"./builded/debug/rust-mind-reader.exe"
+]
+test = "cargo test"
+build = "cargo build --color always --frozen --locked --target-dir builded/"
+edit = "nvim src/main.rs"
+commit = [
+		"rmdir builded",
+		"git add -A",
+		"git stage -A",
+		"git commit -a",
+		"git push origin"
+]
